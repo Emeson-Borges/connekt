@@ -1,0 +1,59 @@
+/* Sidebar.css */
+
+.sidebar {
+    width: 200px;
+    height: 100%;
+    background-color: #283593; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .sidebar__header {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #5867dd; /* Cor da borda */
+  }
+  
+  .sidebar__logo {
+    width: 100px; /* Ajuste conforme necessário */
+    height: auto;
+  }
+  
+  .sidebar__menu {
+    flex-grow: 1;
+    padding-top: 2px;
+  }
+  
+  .sidebar__menuItem {
+    display: flex;
+    align-items: center;
+    padding: 10px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar__menuItem:hover,
+  .sidebar__menuItem.active {
+    background-color: #1e88e5; /* Cor de fundo ao passar o mouse ou ativo */
+  }
+  
+  .sidebar__menuItem p {
+    margin-left: 10px;
+  }
+  
+  .sidebar__footer {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #5867dd; /* Cor da borda */
+  }
+  
+  .sidebar__profilePic {
+    width: 40px; /* Ajuste conforme necessário */
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  

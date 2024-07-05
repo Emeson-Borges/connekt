@@ -1,0 +1,131 @@
+body {
+    background-color: #fafafa;
+    font-family: Arial, sans-serif;
+  }
+  
+  .post-card {
+    background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888, #bc1888);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+    margin-bottom: 20px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.2s;
+  }
+  
+  .post-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .post-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .post-content {
+    padding: 20px;
+  }
+  
+  .post-content h4 {
+    margin-top: 0;
+    font-size: 1.5em;
+  }
+  
+  .post-video {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+  
+  .post-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #f9f9f9;
+    font-size: 0.9em;
+    margin-top: 10px;
+  }
+  
+  .post-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+  }
+  
+  .action-button {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .action-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+
+
+
+
+
+  .post-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 16px;
+    background-color: #fff;
+  }
+  
+  .post-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  
+  .post-author {
+    font-weight: bold;
+  }
+  
+  .post-date {
+    color: #888;
+  }
+  
+  .post-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 12px;
+  }
+  
+  .post-content {
+    font-size: 16px;
+  }
+  
+  .post-title {
+    margin-bottom: 8px;
+  }
+  
+  .post-text {
+    margin-bottom: 12px;
+  }
+  
+  .post-video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 12px;
+  }
+  
+  .post-actions {
+    display: flex;
+    gap: 12px;
+  }
+  

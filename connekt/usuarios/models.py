@@ -36,3 +36,9 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.nome_user
+
+    class Meta:
+        db_table = 'usuarios'
+        managed = True
+        verbose_name = 'Usuario'
+        verbose_name_plural = 'Usuarios'

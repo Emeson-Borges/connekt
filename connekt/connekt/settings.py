@@ -26,9 +26,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'channels',
     'rest_framework',
     'corsheaders',
     'usuarios',
+    'posts',
     # '',
 ]
 
@@ -45,8 +47,12 @@ MIDDLEWARE = [
 ]
 ROOT_URLCONF = 'connekt.urls'
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  
+]
 
-AUTH_USER_MODEL = "accounts.CustomUser"
+
+AUTH_USER_MODEL = "usuarios.CustomUser"
 
 ASGI_APPLICATION = 'connekt.asgi.application'
 

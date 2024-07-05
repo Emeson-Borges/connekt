@@ -1,19 +1,38 @@
-.posts-list {
+/* FeedList.css */
+
+.main-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    position: fixed;
+    width: 240px;
+    height: 100%;
+    background-color: #1a237e;
+    color: #fff;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .posts-list-container {
+    margin-left: 240px; /* Espaço para a sidebar fixa */
+    flex-grow: 1;
+    overflow-y: auto; /* Permite rolar o conteúdo do feed */
     padding: 20px;
   }
   
-  .title {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
+  .posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaço entre os posts */
   }
   
-  @media (min-width: 768px) {
-    .posts-list {
-      padding: 40px;
-    }
+  .title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
   }
   

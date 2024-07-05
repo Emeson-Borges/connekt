@@ -1,59 +1,86 @@
 /* Sidebar.css */
 
 .sidebar {
-    width: 200px;
+    width: 150px;
     height: 100%;
-    background-color: #283593; /* Cor de fundo */
-    color: #fff; /* Cor do texto */
+    background-color: #1a237e; 
+    color: #fff; 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); 
   }
   
   .sidebar__header {
-    padding: 20px;
+    padding: 15px;
     text-align: center;
-    border-bottom: 1px solid #5867dd; /* Cor da borda */
+    border-bottom: 1px solid #3949ab; /* Cor da borda */
   }
   
   .sidebar__logo {
-    width: 100px; /* Ajuste conforme necessário */
+    width: 120px; /* Ajuste conforme necessário */
     height: auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .sidebar__logo:hover {
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
   }
   
   .sidebar__menu {
     flex-grow: 1;
-    padding-top: 2px;
+    padding-top: 10px;
   }
   
   .sidebar__menuItem {
     display: flex;
     align-items: center;
-    padding: 10px 10px;
+    padding: 1px 20px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 16px;
+  }
+  
+  .sidebar__menuItem i {
+    margin-right: 10px;
+    font-size: 18px;
   }
   
   .sidebar__menuItem:hover,
   .sidebar__menuItem.active {
-    background-color: #1e88e5; /* Cor de fundo ao passar o mouse ou ativo */
-  }
-  
-  .sidebar__menuItem p {
-    margin-left: 10px;
+    background-color: #3949ab; /* Cor de fundo ao passar o mouse ou ativo */
+    color: #fff; /* Cor do texto ao passar o mouse ou ativo */
   }
   
   .sidebar__footer {
     padding: 20px;
     display: flex;
     align-items: center;
-    border-top: 1px solid #5867dd; /* Cor da borda */
+    border-top: 1px solid #3949ab; /* Cor da borda */
+    background-color: #1a237e; /* Cor de fundo */
   }
   
   .sidebar__profilePic {
-    width: 40px; /* Ajuste conforme necessário */
-    height: 40px;
+    width: 50px; /* Ajuste conforme necessário */
+    height: 50px;
     border-radius: 50%;
-    margin-right: 10px;
+    margin-right: 15px;
+    border: 2px solid #3949ab; /* Borda ao redor da imagem de perfil */
+  }
+  
+  .sidebar__footer p {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  /* Transição para o logo */
+  .sidebar__logo {
+    width: 120px; /* Ajuste conforme necessário */
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .sidebar__logo:hover {
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
   }
   

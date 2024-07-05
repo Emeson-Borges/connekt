@@ -1,8 +1,27 @@
-import React from 'react';
-import './Menu.css'; 
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import './Menu.css';
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
+  const [user, setUser] = useState({});
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        // Supondo que o usuário logado tenha um ID de 1 para fins de exemplo
+        // Em um aplicativo real, você provavelmente obterá esse ID do estado global ou de um token de autenticação
+        const userId = 1;
+        const response = await axios.get(`http://127.0.0.1:8000/users/${userId}/`);
+        setUser(response.data);
+      } catch (error) {
+        console.error('Error fetching user:', error);
+      }
+    };
+
+    fetchUser();
+  }, []);
+
   return (
     <div className="sidebar">
       <div className="sidebar__header">
@@ -45,10 +64,10 @@ const Sidebar = () => {
       <div className="sidebar__footer">
         <img
           className="sidebar__profilePic"
-          src="/caminho/para/sua/foto-de-perfil.png"
+          src={user.foto_perfil ? `http://127.0.0.1:8000${user.foto_perfil}` : '/caminho/para/default/profile.png'}
           alt="Foto de perfil"
         />
-        <p>Perfil</p>
+        <p>{user.nome_user}</p>
       </div>
     </div>
   );

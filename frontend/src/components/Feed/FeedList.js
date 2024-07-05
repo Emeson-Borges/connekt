@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import FeedCard from './FeedCard';
 import './FeedList.css';
+import Sidebar from '../Menu/Menu';
 
 const FeedList = () => {
   const [posts, setPosts] = useState([]);
@@ -34,12 +35,18 @@ const FeedList = () => {
   }
 
   return (
+    <div>
+    <div>
+    <Sidebar />
+    </div>
     <div className="posts-list">
       <h2 className="title">Feed de Notícias - Connekt</h2>
       {posts.map((post) => (
         <FeedCard key={post.id} post={post} />
       ))}
     </div>
+    </div>
+   
   );
 };
 

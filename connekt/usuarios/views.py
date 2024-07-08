@@ -6,6 +6,11 @@ from rest_framework.authtoken.models import Token
 from django.contrib.auth import authenticate
 from .serializers import UserSerializer
 from django.contrib.auth import get_user_model
+from rest_framework import generics
+from rest_framework.authtoken.views import ObtainAuthToken
+from rest_framework.authtoken.models import Token
+from rest_framework.response import Response
+
 
 User = get_user_model()
 
@@ -51,3 +56,30 @@ class UserViewSet(viewsets.ModelViewSet):
             return Response({'token': token.key}, status=status.HTTP_200_OK)
         else:
             return Response({'error': 'Invalid Credentials'}, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+class UserDetailView(generics.RetrieveAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+
+class CustomAuthToken(ObtainAuthToken):
+    
+    def post(self, request, *args, **kwargs):
+        serializer = self.serializer_class(data=request.data,
+                                           context={'request': request})
+        serializer.is_valid(raise_exception=True)
+        user = serializer.validated_data['user']
+        token, created = Token.objects.get_or_create(user=user)
+        
+        # Customize the response data as needed
+        return Response({
+            'token': token.key,
+            'user': {
+                'id': user.id,
+                'username': user.nome_user,  # Adjust according to your user model
+                'nome_user': user.nome_user,
+                'foto_perfil': request.build_absolute_uri(user.foto_perfil.url) if user.foto_perfil else None
+            }
+        }, status=status.HTTP_200_OK)

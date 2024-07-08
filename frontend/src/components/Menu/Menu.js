@@ -1,19 +1,24 @@
+// Menu.js
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import './Menu.css';
 import { Link } from 'react-router-dom';
+import api from '../api/api';
+import './Menu.css';
+import Logo from './logo/logo.png';
 
 const Sidebar = () => {
   const [user, setUser] = useState({});
+  const [fotoPerfil, setFotoPerfil] = useState('');
 
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        // Supondo que o usuário logado tenha um ID de 1 para fins de exemplo
-        // Em um aplicativo real, você provavelmente obterá esse ID do estado global ou de um token de autenticação
-        const userId = 1;
-        const response = await axios.get(`http://127.0.0.1:8000/users/${userId}/`);
+        const userId = localStorage.getItem('user_id');
+        if (!userId || userId === 'undefined') {
+          throw new Error('User ID not found or undefined in localStorage');
+        }
+        const response = await api.get(`/users/${userId}/`);
         setUser(response.data);
+        setFotoPerfil(response.data.foto_perfil);
       } catch (error) {
         console.error('Error fetching user:', error);
       }
@@ -27,7 +32,7 @@ const Sidebar = () => {
       <div className="sidebar__header">
         <img
           className="sidebar__logo"
-          src="/caminho/para/seu/logo.png"
+          src={Logo}
           alt="Logo da sua rede social"
         />
       </div>
@@ -62,12 +67,10 @@ const Sidebar = () => {
         </Link>
       </div>
       <div className="sidebar__footer">
-        <img
-          className="sidebar__profilePic"
-          src={user.foto_perfil ? `http://127.0.0.1:8000${user.foto_perfil}` : '/caminho/para/default/profile.png'}
-          alt="Foto de perfil"
-        />
-        <p>{user.nome_user}</p>
+        <Link to={`/perfil/${user.id}`} className="perfil-link">
+          <img src={fotoPerfil} alt="Perfil" className="perfil-photo" />
+          <p>{user.nome}</p>
+        </Link>
       </div>
     </div>
   );

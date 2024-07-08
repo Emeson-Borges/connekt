@@ -4,14 +4,14 @@ body {
   }
   
   .post-card {
-    background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888, #bc1888);
+    background: linear-gradient(1350deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888, #bc1888);
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: white;
     margin-bottom: 20px;
     overflow: hidden;
     width: 100%;
-    max-width: 600px;
+    max-width: 500px;
     margin-left: auto;
     margin-right: auto;
     transition: transform 0.2s;
@@ -73,10 +73,6 @@ body {
   }
   
 
-
-
-
-
   .post-card {
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -137,3 +133,68 @@ body {
     object-fit: cover;
     margin-right: 12px;
   }
+
+  .feed-card {
+    border: 1px solid #ddd;
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+  }
+  
+  .feed-card h3 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .feed-card p {
+    margin: 8px 0;
+  }
+  
+  .feed-card img,
+  .feed-card video {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 8px;
+  }
+  
+  .comments-section {
+    margin-top: 16px;
+  }
+  
+  .comments-section h4 {
+    margin: 0;
+    font-size: 20px;
+  }
+  
+  .comment {
+    border-top: 1px solid #ddd;
+    padding: 8px 0;
+  }
+  
+  .add-comment {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+  }
+  
+  .add-comment input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 8px;
+  }
+  
+  .add-comment button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .add-comment button:hover {
+    background-color: #0056b3;
+  }
+  

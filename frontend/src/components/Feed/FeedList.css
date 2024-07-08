@@ -1,38 +1,55 @@
-/* FeedList.css */
-
 .main-container {
-    display: flex;
-    height: 100vh;
+    /* display: flex; */
+    /* height: 100vh; */
+    background-color: #8854F7; /* Cor de fundo desejada */
+  }
+  
+.title {
+    font-size: 28px; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    color: #333; /* Cor do texto */
+    text-transform: uppercase; /* Transforma o texto em maiúsculas */
+    margin-bottom: 15px; /* Espaçamento inferior */
+    text-align: center; /* Alinhamento centralizado */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra no texto para destacar */
+  }
+
+  
+.fragmento {
+    display: flex; /* Usar display flex para alinhar os elementos lado a lado */
   }
   
   .sidebar {
-    position: fixed;
-    width: 240px;
-    height: 100%;
-    background-color: #1a237e;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Fixar a barra lateral à esquerda */
+    left: 0; /* Colocar a barra lateral no canto esquerdo */
+    top: 0; /* Posicionar no topo da tela */
+    width: 240px; /* Largura da barra lateral */
+    height: 100%; /* Altura ocupando toda a tela */
+    
   }
   
   .posts-list-container {
     margin-left: 240px; /* Espaço para a sidebar fixa */
     flex-grow: 1;
-    overflow-y: auto; /* Permite rolar o conteúdo do feed */
+    overflow-y: auto; /* Permitir rolagem vertical */
     padding: 20px;
   }
   
   .posts-list {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Espaço entre os posts */
+    gap: 20px; /* Espaçamento entre os posts */
   }
   
   .title {
     margin-bottom: 20px;
     font-size: 24px;
     color: #333;
+  }
+  
+  .error-message {
+    margin: 20px;
+    color: red;
+    font-weight: bold;
   }
   

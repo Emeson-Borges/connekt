@@ -8,7 +8,7 @@ class Post(models.Model):
     imagem = models.ImageField(upload_to='post_images/', blank=True, null=True)
     video = models.FileField(upload_to='post_videos/', blank=True, null=True)
     data_criacao = models.DateTimeField(auto_now_add=True)
-    data_atualizacao = models.DateTimeField(auto_now=True)  # Atualiza automaticamente ao salvar
+    data_atualizacao = models.DateTimeField(auto_now=True) 
     
     def __str__(self):
         return self.titulo

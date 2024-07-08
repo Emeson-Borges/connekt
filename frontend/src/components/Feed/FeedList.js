@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../api/api'; // Importa a configuração centralizada do Axios
 import FeedCard from './FeedCard';
 import './FeedList.css';
 import Sidebar from '../Menu/Menu';
@@ -11,7 +11,7 @@ const FeedList = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/posts/');
+        const response = await api.get('/posts/'); // Usa a configuração centralizada do Axios
         setPosts(response.data);
       } catch (error) {
         if (error.response) {
@@ -35,18 +35,17 @@ const FeedList = () => {
   }
 
   return (
-    <div>
-    <div>
-    <Sidebar />
+    <div className="main-container">
+      <Sidebar />
+      <div className="posts-list-container">
+        <h2 className="title">Feed de Notícias</h2>
+        <div className="posts-list">
+          {posts.map((post) => (
+            <FeedCard key={post.id} post={post} />
+          ))}
+        </div>
+      </div>
     </div>
-    <div className="posts-list">
-      <h2 className="title">Feed de Notícias - Connekt</h2>
-      {posts.map((post) => (
-        <FeedCard key={post.id} post={post} />
-      ))}
-    </div>
-    </div>
-   
   );
 };
 
